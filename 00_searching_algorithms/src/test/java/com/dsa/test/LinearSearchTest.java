@@ -7,17 +7,26 @@ import org.junit.jupiter.api.Test;
 import com.dsa.LinearSearch;
 
 public class LinearSearchTest {
-	
+
 	@Test
 	void linearSearchTest() {
-		
+
 		LinearSearch lsAlgo = new LinearSearch();
-		int[] input = {1, 2, 3, 4, 10};
+		int[] input = { 1, 2, 3, 4, 10 };
 		int index = lsAlgo.search(input, 1);
-		
+
 		assertEquals(0, index);
-		
-		
+
+	}
+
+	@Test
+	void testUnhappyCase() {
+
+		LinearSearch lsAlgo = new LinearSearch();
+		int[] input = { 1, 2, 3, 4, 10 };
+		int index = lsAlgo.search(input, 120);
+
+		assertEquals(-1, index);
 	}
 
 }
